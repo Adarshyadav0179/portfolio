@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adarsh | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Portfolio<span>.</span></div>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact" class="btn-nav">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <span class="greeting">Hi there, I'm</span>
+      <h1>Adarsh Yadav</h1>
+      <p class="subtitle">Computer Science Student & Aspiring Web Developer</p>
+      <p class="bio">
+        Passionate about writing clean code, building responsive web applications, 
+        and solving real-world problems.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary-btn">View Projects</a>
+        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-card">
+      <p>
+        I am currently pursuing my <strong>B.Tech in Computer Science and Engineering</strong>. 
+        I enjoy learning core computer science fundamentals, building frontend projects, 
+        and exploring modern web technologies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="grid-container">
+      <div class="card skill-card">
+        <h3>C / C++</h3>
+        <p>Problem Solving & Data Structures</p>
+      </div>
+      <div class="card skill-card">
+        <h3>HTML5 & CSS3</h3>
+        <p>Semantic Layouts & Responsive Design</p>
+      </div>
+      <div class="card skill-card">
+        <h3>JavaScript</h3>
+        <p>DOM Manipulation & Interactivity</p>
+      </div>
+      <div class="card skill-card">
+        <h3>Git & GitHub</h3>
+        <p>Version Control & Collaboration</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="grid-container">
+      <div class="card project-card">
+        <div class="project-tag">Hardware / IoT / AI</div>
+        <h3>Urban Noise Monitoring</h3>
+        <p>A smart horn control and urban noise pollution monitoring prototype.</p>
+        <div class="project-links">
+          <a href="#" class="text-link">Code →</a>
+          <a href="#" class="text-link">Demo →</a>
+        </div>
+      </div>
+      <div class="card project-card">
+        <div class="project-tag">Web Development</div>
+        <h3>Personal Portfolio</h3>
+        <p>A clean, mobile-responsive portfolio website built with HTML5 and CSS3.</p>
+        <div class="project-links">
+          <a href="#" class="text-link">Code →</a>
+          <a href="#" class="text-link">Demo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section (Yahan Form Laga Diya Hai) -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+      <p class="contact-desc">
+        Koi question hai ya kisi project par baat karni hai? Message drop karein, mai jaldi reply karunga!
+      </p>
+
+      <form action="https://formspree.io/f/xaeqykal" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter Your Name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Discription..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h2>Let's Connect</h2>
+    <div class="footer-links">
+      <a href="mailto:example@gmail.com">Email</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Adarsh Yadav. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
