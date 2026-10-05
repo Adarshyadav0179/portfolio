@@ -1,4 +1,4 @@
-/* Base Reset & Fonts */
+/* Base Reset */
 •⁠  ⁠{
   margin: 0;
   padding: 0;
@@ -7,6 +7,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -21,12 +26,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
-  background-color: rgba(15, 23, 42, 0.9);
+  padding: 18px 8%;
+  background-color: rgba(15, 23, 42, 0.95);
   position: sticky;
   top: 0;
   backdrop-filter: blur(8px);
-  z-index: 100;
+  z-index: 1000;
   border-bottom: 1px solid #1e293b;
 }
 
@@ -40,6 +45,7 @@ body {
   color: #38bdf8;
 }
 
+/* Desktop Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -65,8 +71,39 @@ body {
   border-radius: 6px;
 }
 
-.btn-nav:hover {
-  background-color: #0369a1;
+/* Chrome Style Hamburger Menu (Desktop par hidden) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background-color: #f8fafc;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Jab hamburger active hoga to 'X' banega */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -117,6 +154,7 @@ body {
   border-radius: 6px;
   font-weight: 600;
   transition: all 0.2s;
+  display: inline-block;
 }
 
 .primary-btn {
@@ -137,7 +175,7 @@ body {
   background-color: #1e293b;
 }
 
-/* Section Common Styling */
+/* Sections Common */
 .section {
   padding: 80px 8%;
 }
@@ -187,17 +225,16 @@ body {
   border-color: #38bdf8;
 }
 
-.skill-card h3 {
+.skill-card h3, .project-card h3 {
   color: #f8fafc;
   margin-bottom: 8px;
 }
 
-.skill-card p {
+.skill-card p, .project-card p {
   color: #94a3b8;
   font-size: 0.95rem;
 }
 
-/* Projects */
 .project-tag {
   display: inline-block;
   font-size: 0.75rem;
@@ -209,20 +246,10 @@ body {
   font-weight: 600;
 }
 
-.project-card h3 {
-  color: #f8fafc;
-  margin-bottom: 8px;
-}
-
-.project-card p {
-  color: #94a3b8;
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-}
-
 .project-links {
   display: flex;
   gap: 16px;
+  margin-top: 15px;
 }
 
 .text-link {
@@ -232,8 +259,65 @@ body {
   font-size: 0.9rem;
 }
 
-.text-link:hover {
-  text-decoration: underline;
+/* Contact Form */
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-desc {
+  color: #94a3b8;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-form {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.form-group label {
+  color: #f8fafc;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #38bdf8;
+}
+
+.submit-btn {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
 }
 
 /* Footer */
@@ -249,26 +333,16 @@ footer h2 {
   margin-bottom: 10px;
 }
 
-footer p {
-  color: #94a3b8;
-  margin-bottom: 20px;
-}
-
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 .footer-links a {
   color: #38bdf8;
   text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
 }
 
 .copyright {
@@ -276,58 +350,57 @@ footer p {
   font-size: 0.85rem;
 }
 
-/* Mobile Responsiveness */
+/* --- Mobile Clean View & Dropdown Menu --- */
 @media (max-width: 768px) {
-  .navbar, .section, .hero, footer {
-    padding-left: 5% !important;
-    padding-right: 5% !important;
-  }
-
-  .hero h1 {
-    font-size: 2rem !important;
-    line-height: 1.2;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn {
-    text-align: center;
-    width: 100%;
-  }
-
   .hamburger {
-    display: flex;
+    display: flex; /* Mobile me 3 lines dikhengi */
   }
 
+  /* Dropdown card jaise Chrome me menu khulta hai */
   .nav-links {
-    position: fixed;
+    position: absolute;
     top: 65px;
-    right: -100%;
-    width: 100%;
-    height: calc(100vh - 65px);
-    background-color: #0f172a;
+    right: 5%;
+    width: 200px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 40px;
-    gap: 25px;
-    transition: right 0.3s ease-in-out;
-    border-top: 1px solid #1e293b;
-    z-index: 999;
+    padding: 15px 0;
+    gap: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: none; /* Default me band rahega */
   }
 
   .nav-links.active {
-    right: 0;
+    display: flex; /* Click karne par khulega */
   }
 
-  .grid-container {
-    grid-template-columns: 1fr !important;
+  .nav-links li {
+    width: 100%;
+    text-align: left;
   }
 
-  .contact-form {
-    padding: 20px 15px;
+  .nav-links a {
+    display: block;
+    padding: 10px 20px;
+    width: 100%;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a:hover {
+    background-color: #0f172a;
+    color: #38bdf8;
+  }
+
+  .btn-nav {
+    border-radius: 0;
+    background: transparent;
+    color: #38bdf8 !important;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
   }
 }
